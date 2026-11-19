@@ -1,0 +1,21 @@
+Compound Key,source_row,Standard Value,Standard Units,source_pM,checked_nM,standard_flag_api,all_exclusion_reasons,primary_retained,augmented_retained
+7b,820,9.14,10'5pM,914000.0,914.0,0.0,not_exact_positive_nM;not_standard_valid,False,True
+10d,1092,0.01893,nM,18.93,0.01893,1.0,,True,True
+10h,1093,0.01095,nM,10.95,0.01095,1.0,,True,True
+10j,1474,0.01352,nM,13.52,0.013519999999999999,1.0,,True,True
+10m,1475,0.02592,nM,25.92,0.025920000000000002,1.0,,True,True
+7d,1690,9.26,10'5pM,926000.0,926.0,0.0,not_exact_positive_nM;not_standard_valid,False,True
+10n,1703,0.02158,nM,21.58,0.02158,1.0,,True,True
+10f,4355,0.01415,nM,14.15,0.014150000000000001,1.0,,True,True
+10i,4356,0.02094,nM,20.94,0.02094,1.0,,True,True
+6,4358,1.36,10'6pM,1360000.0,1360.0,0.0,not_exact_positive_nM;not_standard_valid,False,True
+7a,4359,1.32,10'6pM,1320000.0,1320.0,0.0,not_exact_positive_nM;not_standard_valid,False,True
+10e,5078,0.01323,nM,13.23,0.01323,1.0,,True,True
+10b,5085,0.02836,nM,28.36,0.02836,1.0,,True,True
+10l,5086,0.01672,nM,16.72,0.01672,1.0,,True,True
+10c,5454,0.02621,nM,26.21,0.02621,1.0,,True,True
+7c,7162,7.91,10'5pM,791000.0,791.0,0.0,not_exact_positive_nM;not_standard_valid,False,True
+Donepezil,7173,3.46,10'3pM,3460.0,3.46,0.0,not_exact_positive_nM;not_standard_valid,False,False
+10a,7276,0.51,nM,510.0,0.51,1.0,,True,True
+10g,7709,0.01441,nM,14.41,0.014410000000000001,1.0,,True,True
+10k,7710,0.02938,nM,29.38,0.02938,1.0,,True,True
