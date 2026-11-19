@@ -1,0 +1,10 @@
+{
+  "CHEMBL220_measurement_audit.csv": "3d145f8e74656ccb521209bca6ea8b16c845dbfc50e98c4e054945d1c59883a0",
+  "CHEMBL262_measurement_audit.csv": "1362c3199e75454b71f8215a354e1e1ca5fea1ca0cea77377453d5d9790d4ce1",
+  "classical_features.npz": "32dd4742e8933685c7a922375e9cbeda8e615bad61645946df25c4d02105114f",
+  "development.csv": "1a6d4c937e998e0d2c463ae67f62e02c076194921289e6e0873c15e0dceef794",
+  "snapshot_hashes": {
+    "features.npz": "ade3448a2d2cfcaa5138ccf97a8df83d212136669e6be191d9e26e51a45e80dd",
+    "measurements.csv": "dd726ea64f75d5232578937e71f941402f1de1c6c24ae52d33a6022c1fd724e2"
+  }
+}
