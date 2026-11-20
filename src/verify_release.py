@@ -30,4 +30,13 @@ assert len(p)==106
 for target,n in [('AChE',31),('GSK3B',10)]:
  assert int(p[(p.target==target)&(p.panel=='all')&(p.baseline=='mean')].iloc[0].n)==n
 assert (base/'supplementary/SuppInfo_S1_Three_Reference_Calibration.docx').exists()
-print('PASS: data hashes, source audit, figure, tables, panel counts, rounded article metrics, Supporting Information')
+# Paired original development (Table S10): check two target-specific document-level aggregates.
+dev=pd.read_csv(base/'analysis/outputs/nested_development_paired_summary.csv')
+devdoc=pd.read_csv(base/'analysis/outputs/nested_development_paired_by_document.csv')
+assert len(dev)==8 and len(devdoc)==688
+for target,n,expected in [('AChE',121,.017218188598927826),('GSK3B',51,.01628308501409169)]:
+ sub=dev[(dev.target==target)&(dev.baseline=='reference_mean')&(dev.model=='learned_global')]
+ assert len(sub)==1 and int(sub.iloc[0].n_documents)==n
+ assert abs(float(sub.iloc[0].mean_gain)-expected)<1e-12
+ assert len(devdoc[(devdoc.target==target)&(devdoc.baseline=='reference_mean')&(devdoc.model=='learned_global')])==n
+print('PASS: data hashes, source audit, figure, tables, panel counts, rounded article metrics, Supporting Information and nested development Table S10')
