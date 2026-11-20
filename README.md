@@ -77,3 +77,7 @@ The analysis evaluates a retrospective ChEMBL-derived dataset. Some additional a
 The record source and ChEMBL license are described in `data/README.md` (ChEMBL 37, CC BY-SA 3.0 for the derived source data). No separate software license has been declared for this release; public hosting should not be interpreted as a general unrestricted software license.
 
 Repository URL and archive DOI, if assigned, should be supplied in the manuscript *Data and Code Availability* statement before journal submission.
+
+## Paired comparator intervals
+
+The strict held-out primary comparator Table 4 and Supporting Table S11 provide differences from calibrated CatBoost with 95% paired source-document bootstrap intervals. Generate the two CSV tables via `python analysis/code/comparator_intervals.py --repo . --output analysis/outputs`. These are retrospective conditional intervals from archived document-level results, not an independently retrained evaluation.

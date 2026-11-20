@@ -39,4 +39,15 @@ for target,n,expected in [('AChE',121,.017218188598927826),('GSK3B',51,.01628308
  assert len(sub)==1 and int(sub.iloc[0].n_documents)==n
  assert abs(float(sub.iloc[0].mean_gain)-expected)<1e-12
  assert len(devdoc[(devdoc.target==target)&(devdoc.baseline=='reference_mean')&(devdoc.model=='learned_global')])==n
-print('PASS: data hashes, source audit, figure, tables, panel counts, rounded article metrics, Supporting Information and nested development Table S10')
+# Table 4 / S11: verify the full-precision paired intervals and cross-baseline consistency.
+cmp=pd.read_csv(base/'analysis/outputs/comparator_paired_summary.csv')
+cmprd=pd.read_csv(base/'analysis/outputs/comparator_paired_by_document.csv')
+assert len(cmp)==18 and len(cmprd)==369
+for target,n in [('AChE',31),('GSK3B',10)]:
+  x=cmp[cmp.target==target]
+  assert len(x)==9 and (x.n_documents==n).all()
+  for method in ['raw','mean','calibrated','nearest_reference']:
+    c=x[x.method==method].iloc[0]
+    check=pd.read_csv(base/'results/holdout/by_document.csv').query("target==@target and scope=='primary' and k==3 and model==@method")
+    assert abs(c.comparator_mae-check.mae.mean())<1e-10
+print('PASS: data hashes, source audit, figure, tables, panel counts, rounded article metrics, Supporting Information and nested development Table S10 and comparator Table S11')

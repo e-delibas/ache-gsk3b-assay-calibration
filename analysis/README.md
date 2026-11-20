@@ -6,7 +6,9 @@ This directory contains code, fixed inputs, and calculated tables for the study'
 
 - `code/`: nine analytical scripts and one shared chemistry feature module
 - `inputs/`: row-level export metadata and reserved-family source information for the source-unit audit
-- `outputs/`: CSV files used in the manuscript and Supporting Information, including the paired nested-development Table S10 summaries
+- `outputs/`: CSV files used in the manuscript and Supporting Information, including the paired nested-development Table S10 and held-out comparator Table S11 summaries
+
+Table S11 is generated from stored primary per-document results; calibrated CatBoost is the matched comparator. Run `python analysis/code/comparator_intervals.py --repo . --output analysis/outputs` to reproduce its paired 50,000-draw document-bootstrap confidence intervals.
 
 ## Running the analysis
 
@@ -18,6 +20,7 @@ python src/verify_data.py
 python src/verify_release.py
 export OPENBLAS_NUM_THREADS=1  # macOS/Linux; optional
 python analysis/code/development_paired.py --repo . --output analysis/outputs
+python analysis/code/comparator_intervals.py --repo . --output analysis/outputs
 python analysis/code/unit_audit.py . analysis/outputs
 python analysis/code/influence.py . --output analysis/outputs
 python analysis/code/diagnostics.py . --output analysis/outputs
