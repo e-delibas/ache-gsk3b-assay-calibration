@@ -6,7 +6,7 @@ This directory contains code, fixed inputs, and calculated tables for the study'
 
 - `code/`: nine analytical scripts and one shared chemistry feature module
 - `inputs/`: row-level export metadata and reserved-family source information for the source-unit audit
-- `outputs/`: CSV files used in the manuscript and Supporting Information
+- `outputs/`: CSV files used in the manuscript and Supporting Information, including the paired nested-development Table S10 summaries
 
 ## Running the analysis
 
@@ -17,6 +17,7 @@ python -m pip install -r requirements.txt
 python src/verify_data.py
 python src/verify_release.py
 export OPENBLAS_NUM_THREADS=1  # macOS/Linux; optional
+python analysis/code/development_paired.py --repo . --output analysis/outputs
 python analysis/code/unit_audit.py . analysis/outputs
 python analysis/code/influence.py . --output analysis/outputs
 python analysis/code/diagnostics.py . --output analysis/outputs
